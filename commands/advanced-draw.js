@@ -141,7 +141,7 @@ module.exports = {
 
         pay = {
             prompt: draw_prompt,
-            negative_prompt: neg_prompt + ' ' + text_invs.split('.')[0],
+            negative_prompt: (text_invs ? neg_prompt + ' ' + text_invs.split('.')[0] : neg_prompt),
             steps: 30,
             sampler_index: sampler,
             seed: seed_inp,
