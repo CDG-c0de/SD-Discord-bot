@@ -24,10 +24,12 @@ let objects_vae = [];
 let objects_textinv = [];
 
 files_models.forEach(o => {
-	objects_models.push({
-		name: `${o}`,
-		value: `${o}`
-	});
+    if (!(o.includes('.yaml'))) {
+        objects_models.push({
+            name: `${o}`,
+            value: `${o}`
+        });
+    }
 });
 
 files_vae.forEach(o => {
@@ -38,10 +40,12 @@ files_vae.forEach(o => {
 });
 
 files_textinv.forEach(o => {
-    objects_textinv.push({
-        name: `${o}`,
-        value: `${o}`
-    });
+    if (o !== 'AS-Younger.pt' && o !== 'AS-Youngest.pt') {
+        objects_textinv.push({
+            name: `${o}`,
+            value: `${o}`
+        });
+    }
 });
 
 module.exports = {
@@ -141,7 +145,7 @@ module.exports = {
 
         pay = {
             prompt: draw_prompt,
-            negative_prompt: (text_invs ? neg_prompt + ' ' + text_invs.split('.')[0] : neg_prompt),
+            negative_prompt: (text_invs ? neg_prompt + ' ' + text_invs.split('.')[0] + ' ' + 'AS-Youngest:1.3' + ' ' + 'AS-Younger:1.3' : neg_prompt + ' ' + 'AS-Youngest:1.3' + ' ' + 'AS-Younger:1.3'),
             steps: 30,
             sampler_index: sampler,
             seed: seed_inp,
