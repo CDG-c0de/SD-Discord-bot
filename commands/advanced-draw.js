@@ -145,7 +145,7 @@ module.exports = {
 
         pay = {
             prompt: draw_prompt,
-            negative_prompt: (text_invs ? neg_prompt + ' ' + text_invs.split('.')[0] + ' ' + 'AS-Youngest:1.3' + ' ' + 'AS-Younger:1.3' : neg_prompt + ' ' + 'AS-Youngest:1.3' + ' ' + 'AS-Younger:1.3'),
+            negative_prompt: (text_invs ? neg_prompt + ' ' + text_invs.split('.')[0] + ' ' + 'AS-Youngest:1.5' + ' ' + 'AS-Younger:1.5' : neg_prompt + ' ' + 'AS-Youngest:1.5' + ' ' + 'AS-Younger:1.5'),
             steps: 30,
             sampler_index: sampler,
             seed: seed_inp,

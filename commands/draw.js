@@ -61,7 +61,7 @@ module.exports = {
 
 		pay = {
 			prompt: draw_prompt,
-        	negative_prompt: neg_prompt + ' ' + 'AS-Youngest:1.3' + ' ' + 'AS-Younger:1.3',
+        	negative_prompt: neg_prompt + ' ' + 'AS-Youngest:1.5' + ' ' + 'AS-Younger:1.5',
         	steps: 30
 		};
 
