@@ -20,10 +20,12 @@ var files = fs.readdirSync(path.join(models_path, 'Stable-diffusion'), null, tru
 let objects = [];
 
 files.forEach(o => {
-	objects.push({
-		name: `${o}`,
-		value: `${o}`
-	});
+	if (!(o.includes('.yaml'))) {
+		objects.push({
+			name: `${o}`,
+			value: `${o}`
+		});
+	}
 });
 
 module.exports = {
@@ -61,7 +63,7 @@ module.exports = {
 
 		pay = {
 			prompt: draw_prompt,
-        	negative_prompt: neg_prompt + ' ' + 'AS-Youngest:1.5' + ' ' + 'AS-Younger:1.5',
+        	negative_prompt: neg_prompt,
         	steps: 30
 		};
 
