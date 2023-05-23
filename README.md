@@ -25,7 +25,7 @@ In `config.json` (which you most likely still have to make) in the root director
 Where token is referring to the bot token found in the discord developer portal in your application <br /> <br />
 Where clientId is referring to the client id found in the discord developer portal in your application <br /> <br />
 Where guildId is referring to the id of the Discord server, acquired by right clicking the drop-down menu of the server at the top left and then clicking `copy server id` (note that developer mode has to be enabled for this to work (settings > app settings > advanced > developer mode)) <br /> <br />
-Where models_path is referring to the `models` directory inside the root directory of the stable diffusion web ui directory <br /> <br />
+Where models_path is referring to the `models` directory inside the root directory of the stable diffusion web ui directory (escape backslashes with backslashes)<br /> <br />
 Where sd_api_url is referring to the url that Stable Diffusion is running on, including port, Stable Diffusion ouputs this url in the terminal on launch <br /> <br />
 
 The commands can be deployed to the discord server by running `node deploy-commands.js`, run this every time you change the files in the `commands` directory. <br />
