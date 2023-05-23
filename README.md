@@ -12,7 +12,7 @@ You can either manually input the launch arguments each time when running `webui
 `set COMMANDLINE_ARGS=` to `set COMMANDLINE_ARGS= --xformers --no-half-vae --api` <br />
 
 ## Usage
-In `config.json` (which you most likely still have to make) you should put your configuration like so: <br />
+In `config.json` (which you most likely still have to make) in the root directory of the repo you should put your configuration like so: <br />
 ```json
 {
     "token": "<discord bot token here>",
