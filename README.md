@@ -28,5 +28,5 @@ Where guildId is referring to the id of the Discord server, acquired by right cl
 Where models_path is referring to the `models` directory inside the root directory of the stable diffusion web ui directory (escape backslashes with backslashes)<br /> <br />
 Where sd_api_url is referring to the url that Stable Diffusion is running on, including port, Stable Diffusion ouputs this url in the terminal on launch <br /> <br />
 
-The commands can be deployed to the discord server by running `node deploy-commands.js`, run this every time you change the files in the `commands` directory. <br />
+The commands can be deployed to the discord server by running `node deploy-commands.js`, run this every time you change the files in the `commands` directory, or when you add/remove/change models/textual inversions in Stable Diffusion. <br />
 After the commands have been deployed the bot can be brought online and running by running `node index.js`, (mind that Stable Diffusion has to be running, or else the bot commands won't work).
