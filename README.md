@@ -8,7 +8,7 @@ Install NPM packages (run `npm install` inside SD-Discord-bot root directory) <b
 [Automatic1111 installation of Stable Diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui), launch with the following arguments: <br /> <br />
 `--no-half-vae --api` <br /> <br />
 optionally the `--xformers` argument can be used, this will automatically install xformers and enable it, to improve efficiency and lower VRAM usage. 
-You can either manually input the launch arguments eacht time when running `webui-user.bat` or just edit the file and change the line: <br />
+You can either manually input the launch arguments each time when running `webui-user.bat` or just edit the file and change the line: <br />
 `set COMMANDLINE_ARGS=` to `set COMMANDLINE_ARGS= --xformers --no-half-vae --api` <br />
 
 ## Usage
