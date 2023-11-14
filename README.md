@@ -19,7 +19,7 @@ In `config.json` (which you most likely still have to make) in the root director
     "clientId": "<discord application id here>",
     "guildId": "<guild id here (also known as discord server id)>",
     "models_path": "<models path here (example: C:\\Users\\uname\\Documents\\stable-diffusion-webui\\models)>",
-    "sd_api_url": "<Stable Diffusion url (usually: https://127.0.0.1:7860)>"
+    "sd_api_url": "<Stable Diffusion url (usually: http://127.0.0.1:7860)>"
 }
 ```
 Where token is referring to the bot token found in the discord developer portal in your application <br /> <br />
