@@ -16,27 +16,28 @@ client.on('ready', async () => {
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName("get-samplers")
-        .setDescription("Get all available SD samplers"),
+        .setName("get-embeddings")
+        .setDescription("Get all available SD embeddings (textual inversions)"),
     async execute(interaction) {
         try {
-            const res = await needle('get', sd_api_url + "/sdapi/v1/samplers");
+            const res = await needle('get', sd_api_url + "/sdapi/v1/embeddings");
             let samps = [];
 
             if (res.statusCode === 200) {
-                let it = 0;
-                while (res.body[it]) {
-                    samps.push(res.body[it]["name"]);
-                    it++;
+                for (const key in res.body["loaded"]) {
+                    if (res.body["loaded"].hasOwnProperty(key)) {
+                        const value = res.body["loaded"][key];
+                        samps.push(key);
+                    }
                 }
-                await interaction.reply("Samplers:\n" + samps.join('\n'));
+                await interaction.reply("Embeddings:\n" + samps.join('\n'));
             } else {
                 console.error("Request failed with status code: " + res.statusCode);
-                await interaction.reply("Failed to fetch samplers.");
+                await interaction.reply("Failed to fetch embeddings.");
             }
         } catch (error) {
             console.error("Error:", error);
-            await interaction.reply("An error occurred while fetching samplers.");
+            await interaction.reply("An error occurred while fetching embeddings.");
         }
     },
 };

@@ -16,27 +16,27 @@ client.on('ready', async () => {
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName("get-samplers")
-        .setDescription("Get all available SD samplers"),
+        .setName("get-models")
+        .setDescription("Get all available SD models"),
     async execute(interaction) {
         try {
-            const res = await needle('get', sd_api_url + "/sdapi/v1/samplers");
+            const res = await needle('get', sd_api_url + "/sdapi/v1/sd-models");
             let samps = [];
 
             if (res.statusCode === 200) {
                 let it = 0;
                 while (res.body[it]) {
-                    samps.push(res.body[it]["name"]);
+                    samps.push(res.body[it]["title"]);
                     it++;
                 }
-                await interaction.reply("Samplers:\n" + samps.join('\n'));
+                await interaction.reply("Models:\n" + samps.join('\n'));
             } else {
                 console.error("Request failed with status code: " + res.statusCode);
-                await interaction.reply("Failed to fetch samplers.");
+                await interaction.reply("Failed to fetch models.");
             }
         } catch (error) {
             console.error("Error:", error);
-            await interaction.reply("An error occurred while fetching samplers.");
+            await interaction.reply("An error occurred while fetching models.");
         }
     },
 };
